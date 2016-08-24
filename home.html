@@ -1,0 +1,176 @@
+<!-- 
+This is a comment.
+This is a basic webpage template.
+
+Resources:
+	- Basic bootstrap tutorial: http://www.w3schools.com/bootstrap
+	- Jquery tutorial: http://www.w3schools.com/jquery/
+
+The author of this template is Simone Ivan Conte.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+
+	<title>Simone</title>
+	<meta name="description" content="The HTML5 Herald">
+	<meta name="author" content="SitePoint">
+
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- The style tags are used to specify css properties -->
+	<style> 
+		body {
+		    background-color: lightblue;
+		    /* These are comments in css */
+		    /* background-image: url("paper.gif"); */
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="container">
+
+		<h1>Index</h1>
+		<ul>
+			<li><a href="#aboutme">About Me</a></li>
+			<li><a href="#whatilove">What I love to do</a></li>
+			<li><a href="#whereiamfrom">Where I am from</a></li>
+			<li><a href="#myhobbies">My Hobbies</a></li>
+		</ul>
+
+		<h1 id="aboutme">About me</h1>
+
+		<p>
+			Hello! My name is Simone and I am a <strong>PhD student</strong> at the <i>University of St Andrews</i>. My research focuses on Distributed Systems and it is sponsored by <a href="http://www.adobe.com/uk/">Adobe Systems Inc</a>.
+			Find out more about me in this page:
+		</p>
+
+		<input id="my-input" class="form-control" value="" placeholder="Type something here">
+		<h3 class="text-danger">This is what I typed: <strong id='input-typed'></strong></h3>
+		<!-- 
+			Other contextual classes are:
+			- text-success
+			- text-muted
+			- text-warning
+			- text-info
+			- text-primary
+		-->
+		<h3 class="bg-primary">I really love text on a colored background :) </h3>
+		<!-- 
+			.bg-primary, .bg-success, bg-info, bg-warning, .bg-danger:
+		-->
+
+		<h2 id="whatilove">What I love to do</h2>
+		
+		<ul class="list-group">
+		  <li class="list-group-item"><i class="fa fa-thumbs-up"></i> Writing Software</li>
+		  <li class="list-group-item"><i class="fa fa-rocket"></i> Running</li>
+		  <li class="list-group-item list-group-item-success">Reading a lot of books</li>
+		  <!-- 
+			Other contextual classes are: 
+				- list-group-item-info
+				- list-group-item-warning
+				- list-group-item-danger
+
+			More icons: http://fontawesome.io/icons/
+		  -->
+		</ul>
+		
+
+		<!-- find your Facebook id using http://findmyfbid.com/ -->
+		<img src='http://graph.facebook.com/123/picture?height=200' class="img-rounded" alt="Profile picture">
+
+		<h2 id="whereiamfrom">Where I am from</h2>
+
+		<!-- Display image in folder names sicily.jpg -->
+		<img src="sicily.jpg" class="img-thumbnail" alt="Sicily" width="600">
+		<p> 
+			Sicily is the largest island in the Mediterranean Sea. It constitutes an autonomous Region of Italy, along with surrounding minor islands, officially referred to as Regione Siciliana.
+			<br>
+			Sicily is located in the central Mediterranean Sea, south of the Italian Peninsula, from which it is separated by the narrow Strait of Messina. Its most prominent landmark is Mount Etna, the tallest active volcano in Europe, currently 3,329 m (10,922 ft) high, and one of the most active in the world. The island has a typical Mediterranean climate.
+		</p>
+		<hr> 
+
+		<div class="row">
+		    <div class="col-sm-6">
+		    	<h3>Catania</h3>
+				<p>
+					Catania is an Italian city on the east coast of Sicily facing the Ionian Sea. It is the capital of the Metropolitan City of Catania, one of the ten biggest cities in Italy, and the seventh largest metropolitan area in Italy. The population of the city proper is 315,601 while the population of the conurbation is estimated to be 767,003. The metropolitan city has 1,115,310 inhabitants.
+				</p>
+		    </div>
+		    <div class="col-sm-6">
+		    	<img src="catania.jpg" class="img-thumbnail" alt="Sicily" width="600">
+		    </div>
+	  	</div>
+
+		<h2 id="myhobbies">My hobbies</h2>
+
+		<!-- A responsive table will work well on small devices -->
+		<div class="table-responsive"> 
+		<table class="table table-hover table-striped">
+		    <thead>
+		      <tr>
+		        <th>Firstname</th>
+		        <th>Lastname</th>
+		        <th>Email</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr>
+		        <td>John</td>
+		        <td>Doe</td>
+		        <td>john@example.com</td>
+		      </tr>
+		      <tr>
+		        <td>Mary</td>
+		        <td>Moe</td>
+		        <td>mary@example.com</td>
+		      </tr>
+		      <tr>
+		        <td>July</td>
+		        <td>Dooley</td>
+		        <td>july@example.com</td>
+		      </tr>
+		    </tbody>
+		  </table>
+		  </div>
+	
+		<!-- Horizontal break line -->
+		<hr> 
+		<p>If you click on the "Hide" button, I will disappear.</p>
+
+		<button id="hide" class="btn btn-danger">Hide</button>
+		<button id="show" class="btn btn-success">Show</button>
+
+		<!-- Adding some space at the end of the page -->
+		<br><br>
+	</div> <!-- container -->
+</body>
+
+<script>
+
+	$('#my-input').on('input',function(e){
+	 	$('#input-typed').html($('#my-input').val());
+	});
+
+	// Alternative - will work only on Enter key-press
+	// $('#my-input').change(function(data) {
+	// 	$('#input-typed').html($('#my-input').val());
+	// });
+
+	$(document).ready(function(){
+	    $("#hide").click(function(){
+	        $("p").hide();
+	    });
+	    $("#show").click(function(){
+	        $("p").show();
+	    });
+	});
+</script>
+</html>
